@@ -1,0 +1,77 @@
+<html><!-- Head of the Root -->
+	<head><!-- child sub root of the html tag as head tag  -->
+    	<!-- it is a title tag -->
+		<title>Form</title>
+	</head>
+    <!-- it is a body tag -->
+    <body>
+    	<!-- it is a form tag -->
+		<form name="Form1">
+			<p id="helperNotes"></p>
+			<br>
+			<p>Name: <input type="text" name="nameField" id="txtBox" onfocus="onFocusNameBox();" required/></p>
+			<br>
+			<p>Age: <input type="Number" name="ageField" id="ageBox" min ="1" max="99" onfocus="onFocusAgeBox();" required/></p>
+			<br>
+			<p>City: <input type="text" name="cityField" id="cityBox" onfocus="onFocusCityBox();" required/></p>
+			<br>
+			<input type="Submit" name="submitBtn" onclick="submitButton();" />
+			</form>
+		<!-- it is a script tag -->
+		<script type="text/javascript">
+		
+			//nameHelper,ageHelper and cityHelper will return the helper note values
+			var nameHelper=getNameHelperNote();
+			var ageHelper=getAgeHelperNote();
+			var cityHelper=getCityHelperNote();
+			function getNameHelperNote()
+			{
+			var note="Please input the username";
+				return function ()
+				{
+				document.getElementById("helperNotes").innerHTML=note;
+				};
+			}
+			function getAgeHelperNote()
+			{
+			var note="Please input the Age";
+				return function ()
+				{
+				document.getElementById("helperNotes").innerHTML=note;
+				};
+			}
+			function getCityHelperNote()
+			{
+			var note="Please input the City";
+				return function ()
+				{
+				document.getElementById("helperNotes").innerHTML=note;
+				};
+			}
+			function onFocusNameBox()
+			{
+			nameHelper();
+			}
+			function onFocusAgeBox()
+			{
+			ageHelper();
+			}
+			function onFocusCityBox()
+			{
+			cityHelper();
+			}
+	
+			function submitButton()
+			{
+	
+     		var name =document.input.nameField.value;
+          	document.write("<P>Name: " + name + "</p>");
+           	var age =document.input.ageField.value;
+          	document.write("<P>Name: " + age + "</p>");
+           	var city =document.input.cityField.value;
+          	document.write("<P>Name: " + city + "</p>");
+		
+			}
+		</script>
+	</body>
+</html>
